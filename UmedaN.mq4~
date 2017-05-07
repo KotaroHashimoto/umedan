@@ -12,10 +12,10 @@
 input int Magic_Number = 100; //マジックナンバー
 input double Entry_Lot = 1.0; //エントリー総ロット数
 input double Acceptable_Slippage = 1; //エントリー許容スリッページ (pips)
-input double Acceptable_Spread = 1; //エントリー許容スプレッド (pips)
+input double Acceptable_Spread = 5; //エントリー許容スプレッド (pips)
 input int Take_Profit = 30; //非トレーリングストップ利確幅 (pips)
 input int Trailing_Stop_Loss = 30; //トレーリングストップ追従幅 (pips)
-input int TrailingSL_Percentage = 50; //全ポジションのうちトレーリングストップポジションの割合(%)
+input int TrailingSL_Percentage = 50; //全ポジションのうちのトレーリングストップの割合(%)
 input int Determine_Duration = 10; //エントリー方向判定期間 (秒)
 input int Entry_Threashould = 30; //エントリー方向判定用値動き閾値 (pips)
 input int Time_Hour = 9;  //発動時間 (Hour)
