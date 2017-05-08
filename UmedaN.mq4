@@ -158,6 +158,7 @@ void OnTick()
     return;
   }
   else if(10 * Acceptable_Spread < MarketInfo(Symbol(), MODE_SPREAD) || Acceptable_Spread <= 0.0) {
+    ObjectSetText(lname, "Waiting For The Spread Settled ...", 16, "Arial", clrYellow);
     return;
   }
   
