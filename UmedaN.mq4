@@ -19,7 +19,7 @@ input int TrailingSL_Percentage = 40; //全ポジションのうちトレーリ�
 input int Determine_Duration = 10; //エントリー方向判定期間 (秒)
 input int Entry_Threashould = 10; //エントリー方向判定用値動き閾値 (pips)
 input int Time_Hour = 21;  //発動時間 (Hour)
-input int Time_Minute = 30;  //発動時間 (Minute)
+input int Time_Minute = 59;  //発動時間 (Minute)
 
 double minLot;
 int lotCount;
@@ -28,6 +28,7 @@ double startPrice;
 double tsl;
 double th;
 int cmd;
+bool proh;
 
 string lname = "lbl";
 
@@ -49,6 +50,15 @@ void drawLabel() {
 int OnInit()
   {
 //---
+
+  datetime tl = TimeLocal();  
+
+  if(TimeHour(tl) < Time_Hour || TimeMinute(tl) < Time_Minute) {
+    proh = False;
+  }
+  else {
+    proh = True;
+  }
 
    cmd = -1;   
    th = Entry_Threashould * Point * 10.0;
@@ -77,6 +87,11 @@ void OnDeinit(const int reason)
   
   
 void OnTimer() {
+
+  if(proh) {
+    ObjectSetText(lname, "Timer Setting Invalid.", 16, "Arial", clrYellow);
+    return;
+  }
 
   datetime tl = TimeLocal();  
 
@@ -128,6 +143,10 @@ void OnTick()
   {
 //---
   datetime tl = TimeLocal();  
+
+  if(proh) {
+    return;
+  }
 
   if(TimeHour(tl) < Time_Hour || TimeMinute(tl) < Time_Minute) {
     return;
