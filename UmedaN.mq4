@@ -19,7 +19,7 @@ input int TrailingSL_Percentage = 40; //全ポジションのうちトレーリ�
 input int Determine_Duration = 10; //エントリー方向判定期間 (秒)
 input int Entry_Threashould = 10; //エントリー方向判定用値動き閾値 (pips)
 input int Time_Hour = 21;  //発動時間 (Hour)
-input int Time_Minute = 59;  //発動時間 (Minute)
+input int Time_Minute = 30;  //発動時間 (Minute)
 
 double minLot;
 int lotCount;
