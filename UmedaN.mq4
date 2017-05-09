@@ -9,17 +9,35 @@
 #property version   "1.00"
 #property strict
 
-input int Magic_Number = 100; //マジックナンバー
-input double Entry_Lot = 0.10; //エントリー総ロット数
-input double Acceptable_Slippage = 3; //エントリー許容スリッページ (pips)
-input double Acceptable_Spread = 3; //エントリー許容スプレッド (pips)
-input int Take_Profit = 30; //非トレーリングストップ利確幅 (pips)
-input int Trailing_Stop_Loss = 30; //トレーリングストップ追従幅 (pips)
-input int TrailingSL_Percentage = 40; //全ポジションのうちトレーリングストップポジションの割合(%)
-input int Determine_Duration = 10; //エントリー方向判定期間 (秒)
-input int Entry_Threashould = 10; //エントリー方向判定用値動き閾値 (pips)
-input int Time_Hour = 21;  //発動時間 (Hour)
-input int Time_Minute = 30;  //発動時間 (Minute)
+//マジックナンバー
+input int Magic_Number = 100;
+
+//エントリー総ロット数
+input double Entry_Lot = 0.10;
+
+//エントリー許容スリッページ (pips)
+input double Acceptable_Slippage = 3;
+//エントリー許容スプレッド (pips)
+input double Acceptable_Spread = 3;
+
+//非トレーリングストップ利確幅 (pips)
+input int Take_Profit = 30;
+//トレーリングストップ追従幅 (pips)
+input int Trailing_Stop_Loss = 30;
+
+//全ポジションのうちトレーリングストップポジションの割合(%)
+input int TrailingSL_Percentage = 40;
+
+//エントリー方向判定期間 (秒)
+input int Determine_Duration = 10;
+//エントリー方向判定用値動き閾値 (pips)
+input int Entry_Threashould = 10;
+
+//発動時間 (Hour)
+input int Time_Hour = 21;
+//発動時間 (Minute)
+input int Time_Minute = 30;
+
 
 double minLot;
 int lotCount;
